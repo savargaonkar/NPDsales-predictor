@@ -41,6 +41,12 @@ BassFor_predicted <- predictNLS(BassFor.nlsLM, newdata = EstSales)
 
 BassFor_predicted
 
+SalesPeak <- (M * (P+Q)^2) / 4*Q
+TimePeak <- ((P+Q)^-1)* log(Q/P)
+
+SalesPeak
+TimePeak
+
 #Co-efficients for the model
 BCef <- coef(BassFor.nlsLM)
 M <- BCef[1]
@@ -54,5 +60,7 @@ Ts <- exp(-(P + Q) * Tdelta)
 BassPDF <- M * ((P + Q)^2/P) * Ts/(1 + (Q/P) * Ts)^2
 plot(Tdelta, BassPDF, xlab = "Years", ylab = "Sales", type = "l")
 points(Timee, PSales)
+
+
 
 # Credits - Used script partly from 'Introductory Time Series with R' by P. Cowpertwait and A. Metcalfe, 2009
