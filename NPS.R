@@ -41,17 +41,14 @@ BassFor_predicted <- predictNLS(BassFor.nlsLM, newdata = EstSales)
 
 BassFor_predicted
 
-SalesPeak <- (M * (P+Q)^2) / 4*Q
-TimePeak <- ((P+Q)^-1)* log(Q/P)
-
-SalesPeak
-TimePeak
-
 #Co-efficients for the model
 BCef <- coef(BassFor.nlsLM)
 M <- BCef[1]
 P <- BCef[2]
 Q <- BCef[3]
+
+SalesPeak <- (M * (P+Q)^2) / 4*Q
+TimePeak <- ((P+Q)^-1)* log(Q/P)
 
 #Reset totalsales for M
 Ts <- exp(-(P + Q) * Tdelta)
