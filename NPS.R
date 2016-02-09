@@ -37,7 +37,7 @@ EstSales <- seq(1, 20, by = 1)
 EstSales <- data.frame(Timee = EstSales)
 
 #Confidence set at default values of 95%, change alpha to your own levels here
-BassFor_predicted <- predictNLS(BassFor.nlsLM, newdata = EstSales, alpha = 0.05)
+BassFor_predicted <- predictNLS(BassFor.nlsLM, newdata = EstSales)
 
 BassFor_predicted
 
